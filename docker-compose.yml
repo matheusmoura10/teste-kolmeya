@@ -14,6 +14,7 @@ services:
       - shared
     depends_on:
       - teste-kolmeya-db
+      - teste-kolmeya-redis
   teste-kolmeya-db:
     container_name: teste-kolmeya-db
     image: mysql:8.0
@@ -27,6 +28,16 @@ services:
       - .docker/local/data/mysql:/var/lib/mysql
     ports:
       - "${DB_EXTERNAL_PORT}:3306"
+    networks:
+      - shared
+  teste-kolmeya-redis:
+    container_name: teste-kolmeya-redis
+    image: redis:7.0-alpine
+    restart: unless-stopped
+    volumes:
+        - .docker/local/data/redis:/data
+    ports:
+      - "${REDIS_PORT}:6379"
     networks:
       - shared
 networks:

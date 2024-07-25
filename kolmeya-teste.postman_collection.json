@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "727aa2e2-3cb7-49d0-a506-da97fade0188",
+		"name": "kolmeya-teste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3078944",
+		"_collection_link": "https://dark-equinox-71227.postman.co/workspace/My-Workspace~73ca1696-3666-4c2a-8a85-184f46f6aa02/collection/3078944-727aa2e2-3cb7-49d0-a506-da97fade0188?action=share&source=collection_link&creator=3078944"
+	},
+	"item": [
+		{
+			"name": "Upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/matheus.goncalves/Downloads/cpfs-teste.csv/cpfs-teste.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/documents/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"documents",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

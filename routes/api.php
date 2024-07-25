@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\DocumentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::GET('/users', function () {
-    return response()->json([
-        'name' => 'John Doe',
-        'email' => '']);
+Route::group(['prefix' => 'documents'], function () {
+    Route::post('/upload', [DocumentController::class, 'store']);
 });

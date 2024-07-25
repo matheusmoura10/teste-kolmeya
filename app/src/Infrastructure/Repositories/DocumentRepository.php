@@ -8,13 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class DocumentRepository
 {
-    public function __construct(
-        private DocumentoModel $model
-    )
-    {
-
-    }
-    public function updateOrCreateBatch(array $documents)
+    public function insert(array $documents): void
     {
         DB::table('documents')->insert($documents);
     }

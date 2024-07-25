@@ -9,7 +9,8 @@ RUN docker-php-ext-install opcache pcntl pdo_mysql zip sockets
 RUN pecl update-channels && \
     pecl install ds igbinary xdebug && \
     docker-php-ext-enable ds igbinary xdebug sockets
-ENV XDEBUG_MODE=coverage
+RUN pecl install -D 'enable-redis-igbinary="yes"' redis && \
+    docker-php-ext-enable redis
 
 # Copiar configurações
 COPY .docker/local/nginx/default.conf /etc/nginx/sites-available/default
