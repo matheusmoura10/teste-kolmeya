@@ -32,4 +32,4 @@ As pastas principais do projeto são:
 - app\Console\Commands - contem os comandos do projeto
 
 ## Postman
-- Acesse o link https://dark-equinox-71227.postman.co/workspace/My-Workspace~73ca1696-3666-4c2a-8a85-184f46f6aa02/request/3078944-ffb765eb-29b8-4bc4-b6b3-6805d12640d8?action=share&creator=3078944&ctx=documentation
+- Na raiz do projeto existe um arquivo chamado kolmeya-teste.postman_collection.json com as rotas do projeto
