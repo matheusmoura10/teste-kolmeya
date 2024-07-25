@@ -7,13 +7,6 @@ use App\Jobs\DocumentFileIterator;
 
 class DocumentService
 {
-    public function construct(
-
-    )
-    {
-
-    }
-
     public function store(DocumentRequest $request)
     {
         $file = $request->file('file');
