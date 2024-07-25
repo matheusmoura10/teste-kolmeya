@@ -39,7 +39,7 @@ final class InputReaderFactory
 
         } catch (Exception $e) {
             Log::error($e->getMessage());
-            throw new Exception($e->getMessage(), $e->getCode(), $e);
+            throw $e;
         }
     }
 }
