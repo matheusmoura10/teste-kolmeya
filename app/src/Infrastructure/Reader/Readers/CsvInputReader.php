@@ -2,11 +2,13 @@
 
 namespace App\src\Infrastructure\Reader\Readers;
 
+use App\src\Infrastructure\Reader\Exceptions\GenericError;
 use Exception;
 use Generator;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use App\src\Infrastructure\Reader\InputReaderInterface;
+
 final class CsvInputReader implements InputReaderInterface
 {
     private $fileHandler;
@@ -32,7 +34,7 @@ final class CsvInputReader implements InputReaderInterface
                 }
             }
         } catch (Exception $e) {
-            dd($e->getMessage());
+            throw new GenericError($e->getMessage());
         } finally {
             fclose($this->fileHandler);
         }

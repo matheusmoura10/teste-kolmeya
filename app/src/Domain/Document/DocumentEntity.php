@@ -6,15 +6,14 @@ use ParadiseSessions\Validator\Document;
 
 class DocumentEntity
 {
-    private string $document;
     private bool $isValid;
-    private Document $validator;
 
-    private function __construct(string $document, Document $validator)
+    private function __construct(
+        private readonly string   $document,
+        private readonly Document $validator
+    )
     {
-        $this->document = $document;
         $this->isValid = false;
-        $this->validator = $validator;
 
         $this->validate();
     }
@@ -30,7 +29,8 @@ class DocumentEntity
         return $this->document;
     }
 
-    public function isValid(): bool{
+    public function isValid(): bool
+    {
         return $this->isValid;
     }
 
